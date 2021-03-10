@@ -5,7 +5,6 @@ const Theme = {
 
 const inputRef = document.querySelector('#theme-switch-toggle');
 const bodyRef = document.querySelector('body');
-
 const theme = localStorage.getItem('theme');
 
 inputRef.addEventListener('change', onChangeTheme);
@@ -21,11 +20,7 @@ if (theme === Theme.DARK) {
 }
 
 function onChangeTheme() {
-  if (inputRef.checked) {
-    setDarkTheme();
-  } else {
-    setLightTheme();
-  }
+  inputRef.checked ? setDarkTheme() : setLightTheme();
 }
 
 function setLightTheme() {
