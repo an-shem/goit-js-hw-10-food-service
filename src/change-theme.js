@@ -4,19 +4,15 @@ const Theme = {
 };
 
 const inputRef = document.querySelector('#theme-switch-toggle');
-const bodyRef = document.querySelector('body');
+const bodyRef = document.body;
 const theme = localStorage.getItem('theme');
 
 inputRef.addEventListener('change', onChangeTheme);
 
-if (!theme) {
-  setLightTheme();
-}
-if (theme === Theme.LIGHT) {
-  setLightTheme();
-}
 if (theme === Theme.DARK) {
   setDarkTheme();
+} else {
+  setLightTheme();
 }
 
 function onChangeTheme() {
